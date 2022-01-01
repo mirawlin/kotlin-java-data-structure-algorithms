@@ -15,13 +15,9 @@ class ReverseStringTest {
 
         // WHEN
         var result = reverseString.reverse("hello");
-        System.out.println(Arrays.toString(result));
+        System.out.println(result);
 
         // THEN
-        assertEquals("o", result[0]);
-        assertEquals("l", result[1]);
-        assertEquals("l", result[2]);
-        assertEquals("e", result[3]);
-        assertEquals("h", result[4]);
+        assertEquals("olleh", result);
     }
 }
