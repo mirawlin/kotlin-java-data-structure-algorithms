@@ -1,4 +1,4 @@
-package au.com.mir.java;
+package au.com.mir.java.Arrays;
 
 import java.time.Duration;
 import java.time.Instant;
