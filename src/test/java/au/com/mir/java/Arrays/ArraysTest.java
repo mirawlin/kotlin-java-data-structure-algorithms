@@ -1,5 +1,6 @@
-package au.com.mir.java;
+package au.com.mir.java.Arrays;
 
+import au.com.mir.java.Arrays.Arrays;
 import org.junit.jupiter.api.Test;
 
 class ArraysTest {
