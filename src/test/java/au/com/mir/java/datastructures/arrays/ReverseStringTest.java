@@ -1,4 +1,4 @@
-package au.com.mir.java.Arrays;
+package au.com.mir.java.datastructures.arrays;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +9,7 @@ class ReverseStringTest {
     @Test
     void reverse() {
         //GIVEN
-        var reverseString = new ReverseString();
+        ReverseString reverseString = new ReverseString();
 
         // WHEN
         var result = reverseString.reverse("hello");
