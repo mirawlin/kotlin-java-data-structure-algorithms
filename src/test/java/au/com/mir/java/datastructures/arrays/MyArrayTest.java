@@ -1,4 +1,4 @@
-package au.com.mir.java.Arrays;
+package au.com.mir.java.datastructures.arrays;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +9,7 @@ class MyArrayTest {
     @Test
     void get_shouldRetrieveTheItemAtGivenIndex() {
         // GIVEN
-        var newArray = new MyArray();
+        MyArray newArray = new MyArray();
         newArray.push("hello");
         newArray.push("hi");
 
@@ -23,7 +23,7 @@ class MyArrayTest {
     @Test
     public void push_shouldAddItemsToArray() {
         // GIVEN
-        var newArray = new MyArray();
+        MyArray newArray = new MyArray();
 
         // WHEN
         newArray.push("hello");
@@ -38,7 +38,7 @@ class MyArrayTest {
     @Test
     public void pop_shouldDeleteLastItemInArray() {
         // GIVEN
-        var newArray = new MyArray();
+        MyArray newArray = new MyArray();
 
         // WHEN
         newArray.push("hello");
@@ -54,7 +54,7 @@ class MyArrayTest {
     @Test
     public void delete_shouldDeleteSpecifiedItemInArray() {
         // GIVEN
-        var newArray = new MyArray();
+        MyArray newArray = new MyArray();
 
         // WHEN
         newArray.push("hello");

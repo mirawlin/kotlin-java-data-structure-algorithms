@@ -1,4 +1,4 @@
-package au.com.mir.java.Arrays;
+package au.com.mir.java.datastructures.arrays;
 
 import org.junit.jupiter.api.Test;
 

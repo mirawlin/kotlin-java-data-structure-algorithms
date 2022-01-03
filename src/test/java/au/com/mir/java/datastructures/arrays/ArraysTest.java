@@ -1,6 +1,5 @@
-package au.com.mir.java.Arrays;
+package au.com.mir.java.datastructures.arrays;
 
-import au.com.mir.java.Arrays.Arrays;
 import org.junit.jupiter.api.Test;
 
 class ArraysTest {
