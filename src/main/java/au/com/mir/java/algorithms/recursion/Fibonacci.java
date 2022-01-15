@@ -1,6 +1,4 @@
-package au.com.mir.java.algorithms;
-
-import java.util.ArrayList;
+package au.com.mir.java.algorithms.recursion;
 
 public class Fibonacci {
 
