@@ -1,4 +1,4 @@
-package au.com.mir.java.algorithms;
+package au.com.mir.java.algorithms.recursion;
 
 public class Factorial {
 
