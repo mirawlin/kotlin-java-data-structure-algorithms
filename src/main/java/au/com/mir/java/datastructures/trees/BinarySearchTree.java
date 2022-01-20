@@ -1,5 +1,7 @@
 package au.com.mir.java.datastructures.trees;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree {
     private Node root;
 
@@ -136,6 +138,93 @@ public class BinarySearchTree {
         }
     }
 
+    private ArrayList<Integer> breadthFirstSearch() {
+        var currentNode = root;
+        var list = new ArrayList<Integer>();
+        var queue = new ArrayList<Node>();
+
+        queue.add(currentNode);
+
+        while(queue.size() > 0) {
+            currentNode = queue.remove(0);
+            list.add(currentNode.value);
+
+            if(currentNode.left != null) {
+                queue.add(currentNode.left);
+            }
+
+            if(currentNode.right != null) {
+                queue.add(currentNode.right);
+            }
+        }
+        return list;
+    }
+
+    public ArrayList<Integer> breadthFirstSearchRecursive(ArrayList<Node> queue, ArrayList<Integer> list) {
+        if(queue.size() == 0) {
+            return list;
+        }
+
+        var currentNode = queue.remove(0);
+        list.add(currentNode.value);
+        if(currentNode.left != null) {
+            queue.add(currentNode.left);
+        }
+
+        if(currentNode.right != null) {
+            queue.add(currentNode.right);
+        }
+        return breadthFirstSearchRecursive(queue, list);
+    }
+
+
+    public ArrayList<Integer> dFSInOrder() {
+        return traverseInOrder(root, new ArrayList<>());
+    }
+
+    public ArrayList<Integer> dFSPostOrder() {
+        return traversePostOrder(root, new ArrayList<>());
+    }
+
+    public ArrayList<Integer> dFSPreOrder() {
+        return traversePreOrder(root, new ArrayList<>());
+    }
+
+    private ArrayList<Integer> traverseInOrder(Node node, ArrayList<Integer> list) {
+        if(node.left != null) {
+            traverseInOrder(node.left, list);
+        }
+        list.add(node.value);
+
+        if(node.right != null) {
+            traverseInOrder(node.right, list);
+        }
+        return list;
+    }
+
+    private ArrayList<Integer> traversePostOrder(Node node, ArrayList<Integer> list) {
+        if(node.left != null) {
+            traversePostOrder(node.left, list);
+        }
+        if(node.right != null) {
+            traversePostOrder(node.right, list);
+        }
+        list.add(node.value);
+        return list;
+    }
+
+    private ArrayList<Integer> traversePreOrder(Node node, ArrayList<Integer> list) {
+        list.add(node.value);
+
+        if(node.left != null) {
+            traversePreOrder(node.left, list);
+        }
+        if(node.right != null) {
+            traversePreOrder(node.right, list);
+        }
+        return list;
+    }
+
     public static void main(String[] args) {
         var tree = new BinarySearchTree();
 
@@ -147,10 +236,15 @@ public class BinarySearchTree {
         tree.insert(15);
         tree.insert(1);
 
-        System.out.println(tree.lookup(200));
-        System.out.println(tree);
-        tree.remove(20);
-        System.out.println(tree);
+        ArrayList<Node> queue = new ArrayList<>();
+        queue.add(tree.root);
+
+//        System.out.println(tree.breadthFirstSearch());
+//        System.out.println(tree.breadthFirstSearchRecursive(queue, new ArrayList<>()));
+        System.out.println(tree.dFSInOrder());
+        System.out.println(tree.dFSPreOrder());
+        System.out.println(tree.dFSPostOrder());
+
     }
 
     @Override
